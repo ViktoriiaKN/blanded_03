@@ -1,7 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { FaFlagUsa } from 'react-icons/fa';
 
 import styles from './Header.module.css';
+import { Suspense } from 'react';
 
 export const Header = () => {
   return (
@@ -34,8 +35,12 @@ export const Header = () => {
               </li>
             </ul>
           </nav>
+
         </div>
       </header>
+      <Suspense>
+      <Outlet/>
+      </Suspense>
     </>
   );
 };
